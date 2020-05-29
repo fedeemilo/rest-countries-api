@@ -1,0 +1,32 @@
+$font-weights: (
+	'regular': 300,
+	'medium': 600,
+	'bold': 800,
+);
+
+
+// flex space between
+@mixin flexSpaceBetween() {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin flexCenter() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin styling() {
+	
+}
+
+// Light Theme
+@mixin theme($light-theme: true) {
+	@if $light-theme {
+		background: lighten($veryDarkBlue, 100%) !important;
+		color: darken($white, 100%);
+	}
+}

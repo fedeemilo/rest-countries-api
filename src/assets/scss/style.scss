@@ -1,0 +1,82 @@
+@import 'variables';
+@import 'base';
+@import 'mixins';
+
+@import 'header';
+@import 'home';
+
+body {
+	background: $veryLightGray;
+    color: $veryDarkBlue;
+
+    .home {
+        &__search {
+    
+            
+            input {
+                background: $veryLightGray;
+            }
+        }
+
+        .dd-wrapper {
+            background: $white;
+        }
+    }
+
+}
+
+body.dark-mode {
+	background: $veryDarkBlue;
+    color: $veryLightGray;
+
+    
+    
+    .header {
+        background: $darkBlue;
+        
+        &__text, &__mode {
+            color: $veryLightGray;
+        }
+
+        &__mode {
+            img {
+                filter: invert(100%) sepia(7%) saturate(476%) hue-rotate(314deg) brightness(98%) contrast(88%)
+            }
+        }
+
+       
+    }
+
+    .home {
+        &__search {
+            background: $darkBlue;
+            input {
+                background: $darkBlue !important;
+                color: $white;
+
+                &::placeholder {
+                    color: $white;
+                }
+                
+            }
+        }
+
+        .dd-wrapper {
+            background: $darkBlue;
+
+            
+                .dd-list {
+                    .dd-list-item {
+                        
+                        button {
+                            background: $darkBlue;
+                            border: none;
+                            color: $white;
+                        }
+                        
+                    }
+                }
+            
+        }
+    }
+}

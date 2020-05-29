@@ -1,0 +1,39 @@
+html {
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: $font-family;
+	margin: 0;
+	padding: 0;
+}
+
+a,
+a:visited,
+a:hover {
+	text-decoration: none;
+}
+
+// Flexbox styles
+.flex {
+	display: flex;
+
+	&-jc-sb {
+		justify-content: space-between;
+	}
+
+	&-jc-c {
+		justify-content: center;
+	}
+
+	&-ai-c {
+		align-items: center;
+	}
+}
