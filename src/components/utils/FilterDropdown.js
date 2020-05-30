@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
-import onClickOutside from 'react-onclickoutside';
+import React, { useState, useRef } from 'react';
+
+
+import { UseOutsideClick } from "./";
 
 const FilterDropdown = ({ title, items = [], multiSelect = false, onSelectRegion, onSelectTitle }) => {
 	const [open, setOpen] = useState(false);
 	const [selection, setSelection] = useState([]);
 	const toggle = () => setOpen(!open);
+
+	const ref = useRef();
+
+	UseOutsideClick(ref, () => {
+		setOpen(false);
+	  });
 
 	const handleOnClick = (item) => {
 		onSelectRegion(item.value);
@@ -34,7 +42,7 @@ const FilterDropdown = ({ title, items = [], multiSelect = false, onSelectRegion
 
 	
 	return (
-		<div className='dd-wrapper'>
+		<div className='dd-wrapper' ref={ref}>
 			<div
 				tabIndex={0}
 				className='dd-header'

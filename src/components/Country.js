@@ -11,7 +11,7 @@ const Country = ({ flag, name, population, region, capital }) => {
 				<div className='country__data'>
 					<h3>{name}</h3>
 					<ul>
-						<li><span>Population: </span>{population}</li>
+						<li><span>Population: </span>{population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</li>
 						<li><span>Region: </span>{region}</li>
 						<li><span>Capital: </span>{capital}</li>
 					</ul>

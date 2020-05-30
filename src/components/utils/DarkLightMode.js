@@ -18,8 +18,10 @@ const DarkLightMode = (props) => {
 	useEffect(() => {
 		if (document.body.classList.contains('dark-mode')) {
 			setTextMode(darkText);
+			setDarkMode(true);
 		} else {
 			setTextMode(lightText);
+			setDarkMode(false);
 		}
 	});
 

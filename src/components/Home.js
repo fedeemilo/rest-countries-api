@@ -44,7 +44,6 @@ const Home = () => {
 		filterData.sort((a, b) => {
 			return a - b;
 		});
-		console.log(filterData);
 		setCountries((countries) => countries.concat(filterData));
 	}, []);
 
@@ -54,7 +53,6 @@ const Home = () => {
 
 	const handleRegion = (region) => {
 		setInput(region);
-		console.log(region);
 	};
 
 	const handleTitle = (title) => {
