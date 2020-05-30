@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import Luna from '../../assets/img/luna.svg';
+// <ion-icon name="sunny-outline"></ion-icon>
+// <ion-icon name="moon-outline"></ion-icon>
 
 const DarkLightMode = (props) => {
-
-    if (JSON.parse(localStorage.getItem('DARK_MODE')) === true) {
+	if (JSON.parse(localStorage.getItem('DARK_MODE')) === true) {
 		document.body.classList.add('dark-mode');
 	}
 
 	const mode = Boolean(localStorage.getItem('DARK_MODE'));
-    const [darkMode, setDarkMode] = useState(mode);
-    const [textMode, setTextMode] = useState('');
-    
-    let darkText = 'Light Mode';
-    let lightText = 'Dark Mode';
+	const [darkMode, setDarkMode] = useState(mode);
+	const [textMode, setTextMode] = useState('');
 
-    useEffect(() => {
-        if (document.body.classList.contains('dark-mode')) {
-            setTextMode(darkText);
-        } else {
-            setTextMode(lightText);
-        }
-    })
+	let darkText = 'Light Mode';
+	let lightText = 'Dark Mode';
 
-    const handleModeChange = (e) => {
-        e.preventDefault();
+	useEffect(() => {
+		if (document.body.classList.contains('dark-mode')) {
+			setTextMode(darkText);
+		} else {
+			setTextMode(lightText);
+		}
+	});
+
+	const handleModeChange = (e) => {
+		e.preventDefault();
 		if (!darkMode) {
 			document.body.classList.add('dark-mode');
-		} else {	
+		} else {
 			document.body.classList.remove('dark-mode');
 		}
 
@@ -36,7 +37,14 @@ const DarkLightMode = (props) => {
 
 	return (
 		<div>
-			<a href='' className='header__mode flex-jc-sb' onClick={handleModeChange}><img src={Luna} />{textMode}</a>
+			<a href='' className='header__mode flex-jc-sb' onClick={handleModeChange}>
+				{darkMode ? (
+					<ion-icon name='sunny-outline'></ion-icon>
+				) : (
+					<ion-icon name='moon-outline'></ion-icon>
+				)}
+				{textMode}
+			</a>
 		</div>
 	);
 };

@@ -7,15 +7,15 @@
 
 		.dd-wrapper {
 			display: flex;
-            min-height: 32px;
-            height: 3.6375rem;
-            align-items: center;
+			min-height: 32px;
+			height: 3.6375rem;
+			align-items: center;
 			flex-wrap: wrap;
-            margin-top: 3.3rem;
-            width: 13rem;
-            background: $darkBlue;
-            border-radius: 9px;
-            
+			margin-top: 3.3rem;
+			width: 13rem;
+			background: $darkBlue;
+			border-radius: 9px;
+			box-shadow: 0px 0px 6px .1px rgba(0,0,0,0.75);
 
 			.dd-header {
 				//   @include styling();
@@ -23,8 +23,8 @@
 				justify-content: space-between;
 				cursor: pointer;
 				width: 100%;
-                padding: 2px 20px;
-                outline: none;
+				padding: 2px 20px;
+				outline: none;
 
 				&__title--bold {
 					font-weight: bold;
@@ -36,7 +36,8 @@
 				padding: 0;
 				margin: 0;
 				width: 100%;
-                margin-top: 20px;
+				margin-top: 20px;
+				z-index: 1;
 
 				li {
 					list-style-type: none;
@@ -62,9 +63,9 @@
 						border: 0;
 						width: 100%;
 						text-align: left;
-					
-                        outline:none;
-                        transition: .3s;
+
+						outline: none;
+						transition: 0.3s;
 
 						&:hover,
 						&:focus {
@@ -87,6 +88,8 @@
 		margin-left: -5rem;
 		margin-top: 3.3rem;
 		background-color: $white;
+		box-shadow: 0px 0px 6px .1px rgba(0,0,0,0.75);
+
 
 		ion-icon {
 			float: left;
@@ -99,8 +102,101 @@
 			outline: none;
 			margin-left: 1.4rem;
 			font-size: $font-size-detail;
+			font-weight: 400;
+			color: $veryDarkBlue;
 			background: $white !important;
+			
 		}
 	}
 
+	.countries {
+		display: flex;
+		justify-content: space-around;
+		flex-flow: row wrap;
+		width: 100%;
+		margin-top: 5.9rem;
+		margin-bottom: 3rem;
+
+		.country {
+			@include flexCenter();
+			width: 280px;
+			height: 400px;
+			
+
+			&__box {
+				width: 17.375rem;
+				box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75);
+				border-radius: 9px;
+				transition: 350ms;
+
+				&:hover {
+					transform: scale(1.03);
+					box-shadow: 0px 0px 11px 5.5px rgba(129, 127, 127, 0.75);
+
+
+				}
+			}
+
+			&__flag {
+
+				height: 9rem;
+				width: 100%;
+			}
+			
+			&__img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-top-right-radius: 7px;
+				border-top-left-radius: 7px;
+
+			}
+
+			&__data {
+				background: $darkBlue;
+				margin-top: -10px;
+				padding: 17px;
+				border-bottom-left-radius: 7px;
+				border-bottom-right-radius: 7px;
+				font-size: $font-size;
+				padding-bottom: 2rem;
+			
+
+				h3 {
+					font-size: 14px;
+					display: flex;
+					flex-direction: column;
+					justify-content: start;
+					align-items: flex-start;
+				}
+
+				ul {
+					list-style: none;
+					display: flex;
+					flex-direction: column;
+					justify-content: start;
+					align-items: flex-start;
+					padding: 0;
+					width: 16rem;
+				
+				}
+
+			}
+		}
+	}
 }
+
+// &__row {
+// 	display: flex;
+// 	justify-content: space-around;
+// 	flex-flow: row wrap;
+// 	width: 100%;
+// 	margin-top: 5.9rem;
+// 	margin-bottom: 3rem;
+// }
+
+// &__col {
+// 	@include flexCenter(row, wrap);
+// 	flex-basis: 100%;
+// 	flex: 1;
+// }

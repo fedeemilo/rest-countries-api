@@ -49,7 +49,7 @@ a:hover {
 
 .header {
   padding-bottom: 0.5rem;
-  background-color: white;
+  background-color: #fcf8f8;
 }
 
 .header nav {
@@ -75,7 +75,7 @@ a:hover {
 .header__text {
   margin-left: 3rem;
   font-weight: 800;
-  font-size: 19px;
+  font-size: 1.5rem;
   color: #1a2328;
 }
 
@@ -85,18 +85,18 @@ a:hover {
   font-weight: 600;
 }
 
-.header__mode img {
-  width: 18px;
-  margin-right: .4rem;
+.header ion-icon {
+  font-size: 23px;
+  margin-right: 0.4rem;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.header__mode img:hover {
+.header ion-icon:hover {
   -webkit-transform: rotate(45eg);
           transform: rotate(45eg);
-  -webkit-transform: translate(30%, 20%);
-          transform: translate(30%, 20%);
+  -webkit-transform: translate(30%, 25%);
+          transform: translate(30%, 25%);
 }
 
 .light {
@@ -131,6 +131,8 @@ a:hover {
   width: 13rem;
   background: #2b3945;
   border-radius: 9px;
+  -webkit-box-shadow: 0px 0px 6px 0.1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 6px 0.1px rgba(0, 0, 0, 0.75);
 }
 
 .home__row .dd-wrapper .dd-header {
@@ -157,6 +159,7 @@ a:hover {
   margin: 0;
   width: 100%;
   margin-top: 20px;
+  z-index: 1;
 }
 
 .home__row .dd-wrapper .dd-list li {
@@ -187,8 +190,8 @@ a:hover {
   width: 100%;
   text-align: left;
   outline: none;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .home__row .dd-wrapper .dd-list li button:hover, .home__row .dd-wrapper .dd-list li button:focus {
@@ -209,7 +212,9 @@ a:hover {
           align-items: center;
   margin-left: -5rem;
   margin-top: 3.3rem;
-  background-color: white;
+  background-color: #fcf8f8;
+  -webkit-box-shadow: 0px 0px 6px 0.1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 6px 0.1px rgba(0, 0, 0, 0.75);
 }
 
 .home__search ion-icon {
@@ -223,25 +228,147 @@ a:hover {
   outline: none;
   margin-left: 1.4rem;
   font-size: 1rem;
-  background: white !important;
+  font-weight: 400;
+  color: #1a2328;
+  background: #fcf8f8 !important;
+}
+
+.home .countries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%;
+  margin-top: 5.9rem;
+  margin-bottom: 3rem;
+}
+
+.home .countries .country {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 280px;
+  height: 400px;
+}
+
+.home .countries .country__box {
+  width: 17.375rem;
+  -webkit-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.75);
+  border-radius: 9px;
+  -webkit-transition: 350ms;
+  transition: 350ms;
+}
+
+.home .countries .country__box:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 0px 0px 11px 5.5px rgba(129, 127, 127, 0.75);
+          box-shadow: 0px 0px 11px 5.5px rgba(129, 127, 127, 0.75);
+}
+
+.home .countries .country__flag {
+  height: 9rem;
+  width: 100%;
+}
+
+.home .countries .country__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.home .countries .country__data {
+  background: #2b3945;
+  margin-top: -10px;
+  padding: 17px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  font-size: 0.975rem;
+  padding-bottom: 2rem;
+}
+
+.home .countries .country__data h3 {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.home .countries .country__data ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0;
+  width: 16rem;
 }
 
 body {
-  background: #fafafa;
+  background: rgba(255, 255, 255, 0.932);
   color: #1a2328;
 }
 
 body .home__search input {
-  background: #fafafa;
+  background: rgba(255, 255, 255, 0.932);
 }
 
 body .home .dd-wrapper {
-  background: white;
+  background: #fcf8f8;
+}
+
+body .home .countries .country {
+  color: #2b3945;
+}
+
+body .home .countries .country__box:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 0px 0px 11px 6.5px rgba(22, 22, 22, 0.75);
+          box-shadow: 0px 0px 11px 6.5px rgba(22, 22, 22, 0.75);
+}
+
+body .home .countries .country__data {
+  background: #fcf8f8;
 }
 
 body.dark-mode {
   background: #1a2328;
-  color: #fafafa;
+  color: rgba(255, 255, 255, 0.932);
 }
 
 body.dark-mode .header {
@@ -249,7 +376,7 @@ body.dark-mode .header {
 }
 
 body.dark-mode .header__text, body.dark-mode .header__mode {
-  color: #fafafa;
+  color: rgba(255, 255, 255, 0.932);
 }
 
 body.dark-mode .header__mode img {
@@ -263,23 +390,23 @@ body.dark-mode .home__search {
 
 body.dark-mode .home__search input {
   background: #2b3945 !important;
-  color: white;
+  color: #fcf8f8;
 }
 
 body.dark-mode .home__search input::-webkit-input-placeholder {
-  color: white;
+  color: #fcf8f8;
 }
 
 body.dark-mode .home__search input:-ms-input-placeholder {
-  color: white;
+  color: #fcf8f8;
 }
 
 body.dark-mode .home__search input::-ms-input-placeholder {
-  color: white;
+  color: #fcf8f8;
 }
 
 body.dark-mode .home__search input::placeholder {
-  color: white;
+  color: #fcf8f8;
 }
 
 body.dark-mode .home .dd-wrapper {
@@ -289,5 +416,14 @@ body.dark-mode .home .dd-wrapper {
 body.dark-mode .home .dd-wrapper .dd-list .dd-list-item button {
   background: #2b3945;
   border: none;
-  color: white;
+  color: #fcf8f8;
+}
+
+body.dark-mode .home .countries .country {
+  text-decoration: none;
+  color: #fcf8f8;
+}
+
+body.dark-mode .home .countries .country__data {
+  background: #2b3945;
 }

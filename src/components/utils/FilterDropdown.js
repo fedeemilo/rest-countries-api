@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import onClickOutside from 'react-onclickoutside';
 
-const FilterDropdown = ({ title, items = [], multiSelect = false }) => {
+const FilterDropdown = ({ title, items = [], multiSelect = false, onSelectRegion, onSelectTitle }) => {
 	const [open, setOpen] = useState(false);
 	const [selection, setSelection] = useState([]);
 	const toggle = () => setOpen(!open);
-	FilterDropdown.handleClickOutside = () => setOpen(false);
 
 	const handleOnClick = (item) => {
+		onSelectRegion(item.value);
+		onSelectTitle(item.value);
+
 		if (!selection.some((current) => current.id === item.id)) {
 			if (!multiSelect) {
 				setSelection([item]);
@@ -29,6 +32,7 @@ const FilterDropdown = ({ title, items = [], multiSelect = false }) => {
 		return false;
 	};
 
+	
 	return (
 		<div className='dd-wrapper'>
 			<div
@@ -41,7 +45,7 @@ const FilterDropdown = ({ title, items = [], multiSelect = false }) => {
 				<div className='dd-header__title'>
 					<p className='dd-header__title--bold'>{title}</p>
 				</div>
-				<div className='dd-header__action'>
+				<div className='dd-header__action' onClick={() => toggle(!open)}>
 					<p>
 						{open ? (
 							
@@ -70,4 +74,4 @@ const FilterDropdown = ({ title, items = [], multiSelect = false }) => {
 	);
 };
 
-export default FilterDropdown;
+  export default FilterDropdown;

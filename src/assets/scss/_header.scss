@@ -1,45 +1,42 @@
 .header {
-    padding-bottom: 0.5rem;
-    background-color: $white;
-    
-    nav {
-        width: 100%;
-    }
+	padding-bottom: 0.5rem;
+	background-color: $white;
+
+	nav {
+		width: 100%;
+	}
 
 	&__links {
 		@include flexSpaceBetween();
-
 	}
 
 	&__text {
 		margin-left: 3rem;
-        font-weight: map-get($font-weights, bold);
-        font-size: 19px;
-        color: $veryDarkBlue;
+		font-weight: map-get($font-weights, bold);
+		font-size: $font-size-large;
+		color: $veryDarkBlue;
 	}
 
 	&__mode {
-        margin-right: 3rem;
-        color: $veryDarkBlue; 
-        font-weight: map-get($font-weights, medium);
+		margin-right: 3rem;
+		color: $veryDarkBlue;
+		font-weight: map-get($font-weights, medium);
 
-        
+	
+	}
 
-        img {
-            width: 18px;
-            margin-right: .4rem;
-            transition: 1s;
+	ion-icon {
+		font-size: 23px;
+		margin-right: 0.4rem;
+		transition: 1s;
 
-            &:hover {
-                transform: rotate(45eg);
-                transform: translate(30%, 20%);
-            }
-            
-        }
-
+		&:hover {
+            transform: rotate(45eg);
+			transform: translate(30%, 25%);
+		}
 	}
 }
 
 .light {
-    @include theme($light-theme: true);
+	@include theme($light-theme: true);
 }
