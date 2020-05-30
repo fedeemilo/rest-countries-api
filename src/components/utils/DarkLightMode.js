@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Luna from '../../assets/img/luna.svg';
-// <ion-icon name="sunny-outline"></ion-icon>
-// <ion-icon name="moon-outline"></ion-icon>
 
 const DarkLightMode = (props) => {
 	if (JSON.parse(localStorage.getItem('DARK_MODE')) === true) {
@@ -12,16 +9,21 @@ const DarkLightMode = (props) => {
 	const [darkMode, setDarkMode] = useState(mode);
 	const [textMode, setTextMode] = useState('');
 
-	let darkText = 'Light Mode';
-	let lightText = 'Dark Mode';
+		let darkText = 'Light Mode';
+		let lightText = 'Dark Mode';
 
 	useEffect(() => {
+
 		if (document.body.classList.contains('dark-mode')) {
 			setTextMode(darkText);
 			setDarkMode(true);
 		} else {
 			setTextMode(lightText);
 			setDarkMode(false);
+		}
+
+		if (window.outerWidth < 440) {
+			setTextMode('');
 		}
 	});
 
@@ -39,7 +41,7 @@ const DarkLightMode = (props) => {
 
 	return (
 		<div>
-			<a href='' className='header__mode flex-jc-sb' onClick={handleModeChange}>
+			<a href='#' className='header__mode flex-jc-sb' onClick={handleModeChange}>
 				{darkMode ? (
 					<ion-icon name='sunny-outline'></ion-icon>
 				) : (

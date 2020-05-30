@@ -1,19 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { NavBar, Home } from './components';
+import Routes from './Routes';
 
 const App = () => {
-	return (
-		<div className='App'>
-			{/* NavBar */}
-			<NavBar />
-			{/* Home */}
-			<Home />
-			{/* Search */} {/*  Filter  */}
-			{/* Grid of Countries - Axios request to API */}
-		</div>
-	);
+	return <Routes />;
 };
 
 export default App;

@@ -19,9 +19,6 @@ $font-weights: (
 	align-items: center;
 }
 
-@mixin styling() {
-	
-}
 
 // Light Theme
 @mixin theme($light-theme: true) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import Fade from 'react-reveal/Fade';
 import { FilterDropdown } from './utils';
 import { Country } from './';
 import axios from 'axios';
@@ -30,21 +31,35 @@ const regions = [
 const Home = () => {
 	const [countries, setCountries] = useState([]);
 	const [input, setInput] = useState('');
-	const [region, setRegion] = useState('');
 	const [title, setTitle] = useState('Filter by Region');
 
-	useEffect(async () => {
-		let axiosCountries = await axios.get(
-			'https://restcountries.eu/rest/v2/all'
-		);
-		let filterData = axiosCountries.data.filter((country) => {
-			return country.name !== 'United States Minor Outlying Islands';
-		});
+	useEffect(() => {
+		const fetchData = async () => {
+			let axiosCountries = await axios.get(
+				'https://restcountries.eu/rest/v2/all'
+			);
 
-		filterData.sort((a, b) => {
-			return a - b;
-		});
-		setCountries((countries) => countries.concat(filterData));
+			let filterData = axiosCountries.data.filter((country) => {
+				return country.name !== 'United States Minor Outlying Islands';
+			});
+
+			localStorage.setItem('countries', JSON.stringify(filterData));
+
+			filterData.sort((a, b) => {
+				return a - b;
+			});
+			setCountries((countries) => countries.concat(filterData));
+		};
+
+		if (localStorage.countries) {
+			console.log('From local storage');
+			setCountries((countries) =>
+				countries.concat(JSON.parse(localStorage.getItem('countries')))
+			);
+		} else {
+			console.log('Fetch data and save on local storage');
+			fetchData();
+		}
 	}, []);
 
 	const handleInput = (e) => {
@@ -61,7 +76,7 @@ const Home = () => {
 
 	return (
 		<div className='home'>
-			<div className='home__row'>
+			<div className='home__row stack'>
 				<div className='home__search'>
 					<ion-icon name='search-outline'></ion-icon>
 					<input
@@ -78,28 +93,30 @@ const Home = () => {
 					onSelectTitle={handleTitle}
 				/>
 			</div>
-			<div className='countries'>
-				{countries
-					.filter(
-						(country) =>
-							input === '' ||
-							country.name.toLowerCase().includes(input.toLowerCase()) ||
-							country.region.toLowerCase().includes(input.toLowerCase())
-					)
-					.map((country) => (
-						<Country
-							flag={country.flag}
-							name={country.name}
-							population={country.population}
-							region={
-								country.region === 'Americas'
-									? country.region.slice(0, -1)
-									: country.region
-							}
-							capital={country.capital}
-						/>
-					))}
-			</div>
+			<Fade>
+				<div className='countries'>
+					{countries
+						.filter(
+							(country) =>
+								input === '' ||
+								country.name.toLowerCase().includes(input.toLowerCase()) ||
+								country.region.toLowerCase().includes(input.toLowerCase())
+						)
+						.map((country) => (
+							<Country
+								flag={country.flag}
+								name={country.name}
+								population={country.population}
+								region={
+									country.region === 'Americas'
+										? country.region.slice(0, -1)
+										: country.region
+								}
+								capital={country.capital}
+							/>
+						))}
+				</div>
+			</Fade>
 		</div>
 	);
 };
