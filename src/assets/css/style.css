@@ -127,6 +127,8 @@ a:hover {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: relative;
+  left: 8.3rem;
   margin-top: 3.3rem;
   width: 13rem;
   background: #2b3945;
@@ -210,7 +212,7 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: -5rem;
+  margin-left: -8.28rem;
   margin-top: 3.3rem;
   background-color: #fcf8f8;
   -webkit-box-shadow: 0px 0px 6px 0.1px rgba(0, 0, 0, 0.75);
@@ -246,6 +248,7 @@ a:hover {
   width: 100%;
   margin-top: 5.9rem;
   margin-bottom: 3rem;
+  padding: 1rem;
 }
 
 .home .countries .country {
@@ -258,12 +261,13 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 280px;
+  width: 220px;
   height: 400px;
+  margin: 1.3rem;
 }
 
 .home .countries .country__box {
-  width: 17.375rem;
+  width: 14.775rem;
   -webkit-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.75);
   border-radius: 9px;
@@ -365,6 +369,124 @@ a:hover {
   .home .dd-wrapper {
     width: 80vw;
     margin-top: -.3rem;
+    left: 0;
+  }
+}
+
+.back-home {
+  margin: 3.8rem;
+}
+
+.back-home button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  padding: 0.6rem 2.1rem;
+  border-radius: 5px;
+  font-size: 0.975rem;
+  -webkit-box-shadow: 0px 0px 6px 0.5px rgba(54, 53, 53, 0.75);
+          box-shadow: 0px 0px 6px 0.5px rgba(54, 53, 53, 0.75);
+  -webkit-transition: 1s;
+  transition: 1s;
+  outline: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 5rem;
+}
+
+.back-home button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.back-home button ion-icon {
+  margin-right: 1.3rem;
+  font-size: 1.4rem;
+}
+
+.country-detail__flag {
+  position: relative;
+  left: 1.8rem;
+}
+
+.country-detail__flag img {
+  width: 29rem;
+  height: 20rem;
+}
+
+.country-detail__details {
+  position: relative;
+  left: 1.1rem;
+}
+
+.country-detail__details h2 {
+  margin-top: 1rem;
+}
+
+.country-detail__data .col.two {
+  margin-left: 2.1rem;
+}
+
+.country-detail__data ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.7rem;
+  line-height: 1.7rem;
+}
+
+.country-detail .border-countries {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.country-detail .border-countries li {
+  float: left;
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(150, 148, 148, 0.75);
+          box-shadow: 0px 0px 4px 2px rgba(150, 148, 148, 0.75);
+  border-radius: 4px;
+  margin: 0.3rem;
+}
+
+.country-detail .border-countries li:hover {
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(105, 103, 103, 0.75);
+          box-shadow: 0px 0px 4px 2px rgba(105, 103, 103, 0.75);
+}
+
+.country-detail .border-countries li a {
+  display: block;
+  color: #2b3945;
+  padding: 0.4rem 1rem;
+}
+
+@media (max-width: 775px) {
+  .country-detail__flag {
+    left: 0;
+  }
+  .country-detail__flag img {
+    width: 100%;
+  }
+  .country-detail__data .col.two {
+    margin-left: 0;
+  }
+  .country-detail__data ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.7rem;
+    line-height: 1.7rem;
   }
 }
 
@@ -456,4 +578,27 @@ body.dark-mode .home .countries .country {
 
 body.dark-mode .home .countries .country__data {
   background: #2b3945;
+}
+
+body.dark-mode .country-detail .border-countries li {
+  -webkit-box-shadow: 0px 0px 2.5px 2px rgba(109, 106, 106, 0.75);
+          box-shadow: 0px 0px 2.5px 2px rgba(109, 106, 106, 0.75);
+}
+
+body.dark-mode .country-detail .border-countries li:hover {
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(151, 150, 150, 0.75);
+          box-shadow: 0px 0px 4px 2px rgba(151, 150, 150, 0.75);
+}
+
+body.dark-mode .country-detail .border-countries li a {
+  display: block;
+  color: #fcf8f8;
+  padding: 0.4rem 1rem;
+}
+
+body.dark-mode .back-home button {
+  color: #fcf8f8;
+  background: #2b3945;
+  -webkit-box-shadow: 0px 0px 10px 4px rgba(138, 136, 136, 0.75);
+          box-shadow: 0px 0px 10px 4px rgba(138, 136, 136, 0.75);
 }

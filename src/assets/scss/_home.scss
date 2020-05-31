@@ -11,6 +11,8 @@
 			height: 3.6375rem;
 			align-items: center;
 			flex-wrap: wrap;
+			position: relative;
+			left: 8.3rem;
 			margin-top: 3.3rem;
 			width: 13rem;
 			background: $darkBlue;
@@ -85,7 +87,7 @@
 		height: 3.6375rem;
 		display: flex;
 		align-items: center;
-		margin-left: -5rem;
+		margin-left: -8.28rem;
 		margin-top: 3.3rem;
 		background-color: $white;
 		box-shadow: 0px 0px 6px .1px rgba(0,0,0,0.75);
@@ -116,15 +118,18 @@
 		width: 100%;
 		margin-top: 5.9rem;
 		margin-bottom: 3rem;
+		padding: 1rem;
+
 
 		.country {
 			@include flexCenter();
-			width: 280px;
+			width: 220px;
 			height: 400px;
+			margin: 1.3rem;
 			
 
 			&__box {
-				width: 17.375rem;
+				width: 14.775rem;
 				box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75);
 				border-radius: 9px;
 				transition: 350ms;
@@ -214,5 +219,6 @@
 	.home .dd-wrapper {
 		width: 80vw;
 		margin-top: -.3rem;
+		left: 0;
 	}
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 const Country = ({ flag, name, population, region, capital }) => {
 	return (
-		<a href='/country' className='country'>
+		<a href={'/country/' + name} className='country'>
 			<div className='country__box'>
-				<div class='country__flag'>
+				<div className='country__flag'>
 					<img className='country__img' alt='flag' src={flag} />
 				</div>
 
